@@ -22,7 +22,7 @@ React 19 + TypeScript 6 SPA, bundled with Vite 8. The build pipeline runs `tsc -
 `@/*` maps to `src/*` (defined in `tsconfig.app.json` `paths`, consumed by `vite-tsconfig-paths` — no duplication in `vite.config.ts`).
 
 ```ts
-import Foo from '@/components/Foo'  // resolves to src/components/Foo
+import Foo from '@/components/Foo'; // resolves to src/components/Foo
 ```
 
 ### TypeScript strictness
