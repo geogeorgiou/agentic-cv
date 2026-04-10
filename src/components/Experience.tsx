@@ -1,68 +1,56 @@
 import './Experience.css';
 
-const JOBS = [
-  {
-    id: 'agileactors',
-    name: 'AgileActors',
-    icon: 'groups',
-    iconColor: 'text-primary',
-    badgeText: 'Foundation',
-    badgeColor: 'text-primary',
-    period: 'May 2022 — present',
-    periodColor: 'text-primary',
-    borderClass: 'border-outline-variant/20',
-    role: 'Senior Software Engineer / Tech Lead',
-    description:
-      'Allwyn Lottery Solutions Client – NextJS Engineer\n\
-Migrating old legacy application into latest App Router Next.JS app\n\
-Took ownership of abstracting and modularizing existing logic and functionality\n\
-Implemented comprehensive unit and integration tests using Vitest testing lib\n\
-Developed centralized, re-usable error handling solution for app consistency\n\
-Designed and integrated RBAC solution for both client and server layer\n\
-Collaborated with PO, TL for sprint planning, commitment and blocker identification\n\
-Tech: - App Router NextJS TS, React Query v5, React Hook Form, axios, Vitest, Keycloak\n\
-JS, Yup\n\
-Newcross Healthcare Client – React FE Engineer\n\
-Migrated and refactored old JS into TS code while also in Prod\n\
-Guided a scrum team to build an MVP React product with TS tested on both unit and\n\
-E2E level.\n\
-Worked on a Component Design System to be re-used on wider company scale.\n\
-Provided value by developing the new HR system working both on React and Java BE.\n\
-Tech: - React TS, React Query v5, React Hook Form, axios, Zustand, Playwright, Jest,\n\
-Keycloak JS, Yup, Sentry, Mailosaur, MSW, Kafkajs, Styled Components, Faker, Vite',
-    link: 'https://www.agileactors.com/',
-  },
-  {
-    id: 'netu',
-    name: 'Netu',
-    icon: 'lan',
-    iconColor: 'text-secondary',
-    badgeText: 'Enterprise Systems',
-    badgeColor: 'text-secondary',
-    period: 'March 2021 — May 2022',
-    periodColor: 'text-secondary',
-    borderClass: 'border-outline-variant/20',
-    role: 'Fullstack Developer',
-    description:
-      'Worked as consultant for new eJustice product for Greek Police and migrated code from old legacy backend MVC code to REST while also writing frontend.\n\nTech: - React, Java Spring Boot, Maria DB, Oracle DB',
-    link: 'https://www.netugroup.com/',
-  },
-  {
-    id: 'dataverse',
-    name: 'Dataverse Ltd.',
-    icon: 'database',
-    iconColor: 'text-primary',
-    badgeText: 'Active Partner',
-    badgeColor: 'text-primary',
-    period: 'Feb 2020 — March 2021',
-    periodColor: 'text-primary',
-    borderClass: 'border-primary/20',
-    role: 'Junior Software Engineer',
-    description:
-      'Implemented fullstack solutions while in small agile dev teams at public sector projects for customers like EVEA and AADE.\n\nTech: - React, Java Spring Boot, Maria DB, Oracle DB',
-    link: 'https://www.dataverse.gr/',
-  },
-];
+function TechPill({ label }: { label: string }) {
+  return (
+    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-label bg-surface-container border border-outline-variant/30 text-on-surface-variant">
+      {label}
+    </span>
+  );
+}
+
+function CardHeader({
+  href,
+  name,
+  badge,
+  badgeColor,
+  period,
+  periodColor,
+}: {
+  href: string;
+  name: string;
+  badge: string;
+  badgeColor: string;
+  period: string;
+  periodColor: string;
+}) {
+  return (
+    <div className="flex items-center justify-between">
+      <div className="flex items-center gap-6">
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 bg-surface-container-lowest rounded-xl flex items-center justify-center shrink-0"
+          aria-label={`Visit ${name} website`}
+        >
+          <img
+            height="18"
+            width="18"
+            src={`http://www.google.com/s2/favicons?domain=${href}`}
+            alt={`${name} favicon`}
+          />
+        </a>
+        <div>
+          <h3 className="text-2xl font-headline font-bold text-on-surface">{name}</h3>
+          <span className={`${badgeColor} font-label text-xs uppercase tracking-widest`}>{badge}</span>
+        </div>
+      </div>
+      <div className="text-right">
+        <span className={`${periodColor} font-bold text-sm`}>{period}</span>
+      </div>
+    </div>
+  );
+}
 
 export function Experience() {
   return (
@@ -81,47 +69,206 @@ export function Experience() {
         </div>
 
         <div className="experience-deck max-w-4xl mx-auto">
-          {JOBS.map((job) => (
-            <div key={job.id} className={`deck-card glass-card p-10 rounded-2xl group border ${job.borderClass}`}>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-6">
-                  <a
-                    href={job.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-14 h-14 bg-surface-container-lowest rounded-xl flex items-center justify-center"
-                    aria-label={`Visit ${job.name} website`}
-                  >
-                    <span className="material-symbols-outlined text-3xl">
-                      <img
-                        height="18"
-                        width="18"
-                        src={`http://www.google.com/s2/favicons?domain=${job.link}`}
-                        alt={`${job.name} favicon`}
-                      />
-                    </span>
-                  </a>
+          {/* ── AgileActors ── */}
+          <div className="deck-card glass-card p-10 rounded-2xl group border border-outline-variant/20">
+            <CardHeader
+              href="https://www.agileactors.com/"
+              name="AgileActors"
+              badge="Foundation"
+              badgeColor="text-primary"
+              period="May 2022 — present"
+              periodColor="text-primary"
+            />
 
-                  <div>
-                    <h3 className="text-2xl font-headline font-bold text-on-surface">{job.name}</h3>
-                    <div className="flex items-center gap-2">
-                      <span className={`${job.badgeColor} font-label text-xs uppercase tracking-widest`}>
-                        {job.badgeText}
-                      </span>
-                    </div>
+            <div className="card-content-reveal">
+              <p className="text-secondary font-label text-sm mb-6 uppercase tracking-widest">
+                Senior Software Engineer / Tech Lead
+              </p>
+
+              <div className="space-y-8">
+                <div>
+                  <p className="text-on-surface font-body font-semibold mb-2">Sportion</p>
+                  <p className="text-on-surface-variant font-body leading-relaxed mb-4">
+                    <ul className="list-disc ml-6">
+                      <li>
+                        Established a structured, feature-based development approach to improve scalability and
+                        maintainability.
+                      </li>
+                      <li>Integrated unit testing at the pipeline level to enhance code quality and reliability.</li>
+                      <li>
+                        Implemented consistent structured logging, improved authentication workflows and centralized
+                        error handling across Backoffice products.
+                      </li>
+                      <li>
+                        Resolved expired OKTA authentication configuration issues restoring and securing DEV
+                        environments.
+                      </li>
+                      <li>
+                        Initiated a long-term transition plan to replace an unscalable and unmaintainable role based
+                        grouping system. (CASL)
+                      </li>
+                      <li>
+                        Facilitated team discussions to encourage and document frontend innovations and best practices.
+                      </li>
+                      <li>
+                        Produced detailed technical documentation and established a standardized onboarding template for
+                        new team members.
+                      </li>
+                      <li>
+                        Refactored key application pages, increasing maintainability and establishing credibility with
+                        business stakeholders.
+                      </li>
+                      <li>
+                        Identified and remediated security vulnerabilities across multiple application layers (React,
+                        Next.js, Node).
+                      </li>
+                      <li>
+                        Launched a dedicated payment ecosystem communication channel to streamline collaboration among
+                        technical leads.
+                      </li>
+                      <li>
+                        Introduced testing branches to efficiently aggregate and validate feature sets, optimizing the
+                        Dev-QA process.
+                      </li>
+                      <li>
+                        Collaborated with QA and DevOps to resolve complex cross-team configuration issues, ensuring
+                        reliable CI/CD delivery.
+                      </li>
+                      <li>
+                        Optimized Docker image build processes, reducing image sizes by approximately 60% via
+                        multi-stage builds.
+                      </li>
+                    </ul>
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      'Next.JS App Router / Pages Router',
+                      'TypeScript',
+                      'React Query v5',
+                      'React Hook Form',
+                      'axios',
+                      'Vite',
+                      'Vitest',
+                      'OKTA',
+                      'Zod',
+                      'Storybook',
+                    ].map((t) => (
+                      <TechPill key={t} label={t} />
+                    ))}
                   </div>
                 </div>
-                <div className="text-right">
-                  <span className={`${job.periodColor} font-bold text-sm`}>{job.period}</span>
+
+                <div>
+                  <p className="text-on-surface font-body font-semibold mb-2">
+                    Allwyn Lottery Solutions — NextJS Engineer
+                  </p>
+                  <p className="text-on-surface-variant font-body leading-relaxed mb-4">
+                    Migrated a legacy application to the latest App Router Next.JS stack, taking ownership of
+                    abstracting and modularizing existing logic. Implemented comprehensive unit and integration tests,
+                    developed a centralised re-usable error-handling solution and designed an RBAC layer covering both
+                    client and server. Collaborated closely with PO and TL on sprint planning, commitment and blocker
+                    identification.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      'Next.JS App Router',
+                      'TypeScript',
+                      'React Query v5',
+                      'React Hook Form',
+                      'axios',
+                      'Vitest',
+                      'Keycloak JS',
+                      'Yup',
+                    ].map((t) => (
+                      <TechPill key={t} label={t} />
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-on-surface font-body font-semibold mb-2">
+                    Newcross Healthcare — React FE Engineer
+                  </p>
+                  <p className="text-on-surface-variant font-body leading-relaxed mb-4">
+                    Migrated and refactored a JavaScript codebase to TypeScript while in production. Guided a scrum team
+                    to deliver an MVP React product tested at both unit and E2E level. Contributed to a company-wide
+                    Component Design System and built the new HR system spanning both React frontend and Java backend.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      'React TS',
+                      'React Query v5',
+                      'React Hook Form',
+                      'axios',
+                      'Zustand',
+                      'Playwright',
+                      'Jest',
+                      'Keycloak JS',
+                      'Yup',
+                      'Sentry',
+                      'MSW',
+                      'KafkaJS',
+                      'Styled Components',
+                      'Vite',
+                    ].map((t) => (
+                      <TechPill key={t} label={t} />
+                    ))}
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div className="card-content-reveal">
-                <p className="text-secondary font-label text-sm mb-4 uppercase tracking-widest">{job.role}</p>
-                <p className="text-on-surface-variant font-body leading-relaxed max-w-2xl">{job.description}</p>
+          {/* ── Netu ── */}
+          <div className="deck-card glass-card p-10 rounded-2xl group border border-outline-variant/20">
+            <CardHeader
+              href="https://www.netugroup.com/"
+              name="Netu"
+              badge="Enterprise Systems"
+              badgeColor="text-secondary"
+              period="March 2021 — May 2022"
+              periodColor="text-secondary"
+            />
+
+            <div className="card-content-reveal">
+              <p className="text-secondary font-label text-sm mb-4 uppercase tracking-widest">Fullstack Developer</p>
+              <p className="text-on-surface-variant font-body leading-relaxed mb-4">
+                Worked as a consultant on the new eJustice product for the Greek Police, migrating a legacy backend MVC
+                codebase to a modern REST architecture while simultaneously building the frontend.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['React TS', 'MUI', 'Java Spring Boot', 'JBoss', 'Oracle DB'].map((t) => (
+                  <TechPill key={t} label={t} />
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* ── Dataverse ── */}
+          <div className="deck-card glass-card p-10 rounded-2xl group border border-primary/20">
+            <CardHeader
+              href="https://www.dataverse.gr/"
+              name="Dataverse Ltd."
+              badge="Active Partner"
+              badgeColor="text-primary"
+              period="Feb 2020 — March 2021"
+              periodColor="text-primary"
+            />
+
+            <div className="card-content-reveal">
+              <p className="text-secondary font-label text-sm mb-4 uppercase tracking-widest">
+                Junior Software Engineer
+              </p>
+              <p className="text-on-surface-variant font-body leading-relaxed mb-4">
+                Delivered fullstack solutions in small agile teams for public sector clients including EVEA and AADE.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['React JS', 'Java Spring Boot', 'JSP', 'Hibernate', 'MariaDB', 'Oracle DB'].map((t) => (
+                  <TechPill key={t} label={t} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
