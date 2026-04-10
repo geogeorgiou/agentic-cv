@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -62,10 +64,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
-
 h1,
 h2 {
   font-family: var(--heading);
@@ -82,6 +80,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -91,21 +90,42 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
 code {
+  font-family: var(--mono);
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
+  border-radius: 4px;
   background: var(--code-bg);
+  color: var(--text-h);
+  display: inline-flex;
+}
+
+/* Decorative tick marks — pseudo-elements can't be expressed as inline utilities */
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
 }
