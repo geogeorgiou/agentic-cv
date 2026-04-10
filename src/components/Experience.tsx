@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 function TechPill({ label }: { label: string }) {
   return (
     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-label bg-surface-container border border-outline-variant/30 text-on-surface-variant">
@@ -22,18 +24,18 @@ function CardHeader({
   periodColor: string;
 }) {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6">
       <div className="flex items-center gap-6">
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-14 h-14 bg-surface-container-lowest rounded-xl flex items-center justify-center shrink-0"
+          className="w-10 h-10 sm:w-14 sm:h-14 bg-surface-container-lowest bg-white rounded-xl flex items-center justify-center shrink-0"
           aria-label={`Visit ${name} website`}
         >
           <img
-            height="18"
-            width="18"
+            height="20"
+            width="20"
             src={`http://www.google.com/s2/favicons?domain=${href}`}
             alt={`${name} favicon`}
           />
@@ -43,20 +45,26 @@ function CardHeader({
           <span className={`${badgeColor} font-label text-xs uppercase tracking-widest`}>{badge}</span>
         </div>
       </div>
-      <div className="text-right">
-        <span className={`${periodColor} font-bold text-sm`}>{period}</span>
+      <div className="text-left sm:text-right shrink-0">
+        <span className={`${periodColor} font-bold text-sm whitespace-nowrap`}>{period}</span>
       </div>
     </div>
   );
 }
 
 const cardClass =
-  'glass-card p-10 rounded-2xl group border transition-transform duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:scale-[1.02] hover:-translate-y-1';
+  'glass-card p-6 md:p-10 rounded-2xl group border transition-transform duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] md:hover:scale-[1.02] md:hover:-translate-y-1 cursor-pointer md:cursor-default';
 
 const contentRevealClass =
-  'max-h-0 group-hover:max-h-[600px] opacity-0 group-hover:opacity-100 overflow-hidden group-hover:overflow-y-auto mt-0 group-hover:mt-6 pr-3 transition-[max-height,opacity,margin-top] duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]';
+  'max-h-0 md:group-hover:max-h-[600px] opacity-0 md:group-hover:opacity-100 overflow-hidden md:group-hover:overflow-y-auto mt-0 md:group-hover:mt-6 pr-3 transition-[max-height,opacity,margin-top] duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]';
 
 export function Experience() {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const handleCardClick = (id: string) => {
+    setSelectedId(selectedId === id ? null : id);
+  };
+
   return (
     <section className="py-32 bg-surface-container-low relative" id="experience">
       <div className="max-w-7xl mx-auto px-8">
@@ -67,14 +75,14 @@ export function Experience() {
             </h2>
             <div className="h-1.5 w-24 bg-primary rounded-full" />
           </div>
-          <p className="text-on-surface-variant text-lg font-body max-w-sm">
+          <p className="text-on-surface-variant text-lg font-body max-w-sm text-center md:text-left">
             Experience spanning both public and private sectors, delivering solutions across diverse business domains.
           </p>
         </div>
 
         <div className="flex flex-col gap-4 max-w-4xl mx-auto">
           {/* ── AgileActors ── */}
-          <div className={`${cardClass} border-outline-variant/20`}>
+          <div className={`${cardClass} border-outline-variant/20`} onClick={() => handleCardClick('agile-actors')}>
             <CardHeader
               href="https://www.agileactors.com/"
               name="AgileActors"
@@ -84,7 +92,9 @@ export function Experience() {
               periodColor="text-primary"
             />
 
-            <div className={contentRevealClass}>
+            <div
+              className={`${contentRevealClass} ${selectedId === 'agile-actors' ? '!max-h-[600px] !opacity-100 !overflow-y-auto !mt-6' : ''}`}
+            >
               <p className="text-secondary font-label text-sm mb-6 uppercase tracking-widest">
                 Senior Software Engineer / Tech Lead
               </p>
@@ -225,17 +235,19 @@ export function Experience() {
           </div>
 
           {/* ── Netu ── */}
-          <div className={`${cardClass} border-outline-variant/20`}>
+          <div className={`${cardClass} border-outline-variant/20`} onClick={() => handleCardClick('netu')}>
             <CardHeader
               href="https://www.netugroup.com/"
               name="Netu"
-              badge="ERP, CRM software, Systems Integration, Business and Technology"
+              badge="Systems Integration, Business and Technology"
               badgeColor="text-secondary"
-              period="March 2021 — May 2022"
+              period="Mar 2021 — May 2022"
               periodColor="text-secondary"
             />
 
-            <div className={contentRevealClass}>
+            <div
+              className={`${contentRevealClass} ${selectedId === 'netu' ? '!max-h-[600px] !opacity-100 !overflow-y-auto !mt-6' : ''}`}
+            >
               <p className="text-secondary font-label text-sm mb-4 uppercase tracking-widest">Fullstack Developer</p>
               <p className="text-on-surface-variant font-body leading-relaxed mb-4">
                 Worked as a consultant on the new eJustice product for the Greek Police, migrating a legacy backend MVC
@@ -250,7 +262,7 @@ export function Experience() {
           </div>
 
           {/* ── Dataverse ── */}
-          <div className={`${cardClass} border-primary/20`}>
+          <div className={`${cardClass} border-primary/20`} onClick={() => handleCardClick('dataverse')}>
             <CardHeader
               href="https://www.dataverse.gr/"
               name="Dataverse Ltd."
@@ -260,7 +272,9 @@ export function Experience() {
               periodColor="text-primary"
             />
 
-            <div className={contentRevealClass}>
+            <div
+              className={`${contentRevealClass} ${selectedId === 'dataverse' ? '!max-h-[600px] !opacity-100 !overflow-y-auto !mt-6' : ''}`}
+            >
               <p className="text-secondary font-label text-sm mb-4 uppercase tracking-widest">
                 Junior Software Engineer
               </p>

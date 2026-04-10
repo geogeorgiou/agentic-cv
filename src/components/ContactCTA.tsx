@@ -3,7 +3,7 @@ import { config } from '@/config';
 export function ContactCTA() {
   return (
     <section className="py-24 max-w-7xl mx-auto px-8">
-      <div className="bg-gradient-to-r from-surface-container-high to-surface-container rounded-[3rem] p-12 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="bg-gradient-to-r from-surface-container-high to-surface-container rounded-[3rem] p-12 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center eustify-between gap-12">
         <div className="relative z-10 text-center md:text-left">
           <h2 className="text-3xl md:text-5xl font-headline font-bold text-on-surface mb-4">
             Let&apos;s build something

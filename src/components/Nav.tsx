@@ -77,9 +77,11 @@ export function Nav() {
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
         <div className="flex items-center gap-2.5 font-headline font-bold tracking-tighter text-on-surface text-xl">
           <CodeIcon className="w-6 h-6 shrink-0" />
-          Georgios{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">
-            Georgiou
+          <span className="hidden sm:inline">
+            Georgios{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">
+              Georgiou
+            </span>
           </span>
         </div>
 

@@ -52,11 +52,11 @@ function PhoneIcon() {
 export function Footer() {
   return (
     <footer className="w-full border-t border-slate-800/50 bg-slate-950">
-      <div className="flex flex-col md:flex-row justify-between items-center py-12 px-8 max-w-7xl mx-auto gap-6">
-        <div className="font-body text-sm tracking-tight text-slate-600">
+      <div className="flex flex-col gap-6 md:flex-row md:justify-between md:items-center py-12 px-8 max-w-7xl mx-auto">
+        <div className="font-body text-sm tracking-tight text-slate-600 text-center md:text-left">
           © 2026 Georgios Georgiou. Powered by React &amp; Vite.
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex gap-4 items-center gap-6 justify-center">
           <a className={iconClass} href={`tel:${config.contact.phone}`} aria-label="Phone">
             <PhoneIcon />
           </a>

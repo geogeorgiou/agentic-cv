@@ -26,11 +26,11 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-surface-container-highest/50 backdrop-blur-md border border-outline-variant/20 text-secondary text-sm font-medium tracking-wider uppercase">
+        <div className="mx-auto w-fit px-4 py-1.5 mb-6 rounded-full bg-surface-container-highest/50 backdrop-blur-md border border-outline-variant/20 text-secondary text-sm font-medium tracking-wider uppercase text-center">
           Available for Architecture &amp; Consulting
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-headline font-bold text-on-surface tracking-tighter mb-6 leading-tight">
+        <h1 className="text-5xl sm:text-6xl md:text-8xl font-headline font-bold text-on-surface tracking-tighter mb-6 leading-tight">
           Georgios{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">
             Georgiou
@@ -47,14 +47,14 @@ export function Hero() {
             href={config.contact.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_10px_30px_rgba(45,98,228,0.3)] transition-all active:scale-95 inline-flex items-center justify-center"
+            className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_10px_30px_rgba(45,98,228,0.3)] transition-all active:scale-95 inline-flex items-center justify-center w-fit mx-auto sm:mx-0"
           >
             View Projects
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 hidden lg:flex">
         <span className="text-xs font-label tracking-widest uppercase text-outline">Scroll to explore</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
       </div>
