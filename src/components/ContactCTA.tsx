@@ -11,7 +11,7 @@ export function ContactCTA() {
             exceptional together.
           </h2>
           <p className="text-on-surface-variant text-lg">
-            I&apos;m currently open to new architectural challenges and challenges in the modern world.
+            I&apos;m always interested in architectural problems and challenges in the modern world.
           </p>
         </div>
         <div className="relative z-10 w-full md:w-auto">

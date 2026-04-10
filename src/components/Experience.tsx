@@ -1,5 +1,3 @@
-import './Experience.css';
-
 function TechPill({ label }: { label: string }) {
   return (
     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-label bg-surface-container border border-outline-variant/30 text-on-surface-variant">
@@ -52,6 +50,12 @@ function CardHeader({
   );
 }
 
+const cardClass =
+  'glass-card p-10 rounded-2xl group border transition-transform duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:scale-[1.02] hover:-translate-y-1';
+
+const contentRevealClass =
+  'max-h-0 group-hover:max-h-[600px] opacity-0 group-hover:opacity-100 overflow-hidden group-hover:overflow-y-auto mt-0 group-hover:mt-6 pr-3 transition-[max-height,opacity,margin-top] duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]';
+
 export function Experience() {
   return (
     <section className="py-32 bg-surface-container-low relative" id="experience">
@@ -68,19 +72,19 @@ export function Experience() {
           </p>
         </div>
 
-        <div className="experience-deck max-w-4xl mx-auto">
+        <div className="flex flex-col gap-4 max-w-4xl mx-auto">
           {/* ── AgileActors ── */}
-          <div className="deck-card glass-card p-10 rounded-2xl group border border-outline-variant/20">
+          <div className={`${cardClass} border-outline-variant/20`}>
             <CardHeader
               href="https://www.agileactors.com/"
               name="AgileActors"
-              badge="Foundation"
+              badge="IT Professionals Acting for Businesses"
               badgeColor="text-primary"
               period="May 2022 — present"
               periodColor="text-primary"
             />
 
-            <div className="card-content-reveal">
+            <div className={contentRevealClass}>
               <p className="text-secondary font-label text-sm mb-6 uppercase tracking-widest">
                 Senior Software Engineer / Tech Lead
               </p>
@@ -147,6 +151,7 @@ export function Experience() {
                       'React Query v5',
                       'React Hook Form',
                       'axios',
+                      'Tailwind CSS',
                       'Vite',
                       'Vitest',
                       'OKTA',
@@ -220,17 +225,17 @@ export function Experience() {
           </div>
 
           {/* ── Netu ── */}
-          <div className="deck-card glass-card p-10 rounded-2xl group border border-outline-variant/20">
+          <div className={`${cardClass} border-outline-variant/20`}>
             <CardHeader
               href="https://www.netugroup.com/"
               name="Netu"
-              badge="Enterprise Systems"
+              badge="ERP, CRM software, Systems Integration, Business and Technology"
               badgeColor="text-secondary"
               period="March 2021 — May 2022"
               periodColor="text-secondary"
             />
 
-            <div className="card-content-reveal">
+            <div className={contentRevealClass}>
               <p className="text-secondary font-label text-sm mb-4 uppercase tracking-widest">Fullstack Developer</p>
               <p className="text-on-surface-variant font-body leading-relaxed mb-4">
                 Worked as a consultant on the new eJustice product for the Greek Police, migrating a legacy backend MVC
@@ -245,17 +250,17 @@ export function Experience() {
           </div>
 
           {/* ── Dataverse ── */}
-          <div className="deck-card glass-card p-10 rounded-2xl group border border-primary/20">
+          <div className={`${cardClass} border-primary/20`}>
             <CardHeader
               href="https://www.dataverse.gr/"
               name="Dataverse Ltd."
-              badge="Active Partner"
+              badge="Management platform of digital and printed documents"
               badgeColor="text-primary"
               period="Feb 2020 — March 2021"
               periodColor="text-primary"
             />
 
-            <div className="card-content-reveal">
+            <div className={contentRevealClass}>
               <p className="text-secondary font-label text-sm mb-4 uppercase tracking-widest">
                 Junior Software Engineer
               </p>
