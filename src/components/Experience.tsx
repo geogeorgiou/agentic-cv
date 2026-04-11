@@ -142,59 +142,56 @@ export function Experience() {
                 <div className="space-y-8">
                   <div>
                     <p className="text-on-surface font-body font-semibold mb-2">Sportion</p>
-                    <p className="text-on-surface-variant font-body leading-relaxed mb-4">
-                      <ul className="list-disc ml-6">
-                        <li>
-                          Established a structured, feature-based development approach to improve scalability and
-                          maintainability.
-                        </li>
-                        <li>Integrated unit testing at the pipeline level to enhance code quality and reliability.</li>
-                        <li>
-                          Implemented consistent structured logging, improved authentication workflows and centralized
-                          error handling across Backoffice products.
-                        </li>
-                        <li>
-                          Resolved expired OKTA authentication configuration issues restoring and securing DEV
-                          environments.
-                        </li>
-                        <li>
-                          Initiated a long-term transition plan to replace an unscalable and unmaintainable role based
-                          grouping system. (CASL)
-                        </li>
-                        <li>
-                          Facilitated team discussions to encourage and document frontend innovations and best
-                          practices.
-                        </li>
-                        <li>
-                          Produced detailed technical documentation and established a standardized onboarding template
-                          for new team members.
-                        </li>
-                        <li>
-                          Refactored key application pages, increasing maintainability and establishing credibility with
-                          business stakeholders.
-                        </li>
-                        <li>
-                          Identified and remediated security vulnerabilities across multiple application layers (React,
-                          Next.js, Node).
-                        </li>
-                        <li>
-                          Launched a dedicated payment ecosystem communication channel to streamline collaboration among
-                          technical leads.
-                        </li>
-                        <li>
-                          Introduced testing branches to efficiently aggregate and validate feature sets, optimizing the
-                          Dev-QA process.
-                        </li>
-                        <li>
-                          Collaborated with QA and DevOps to resolve complex cross-team configuration issues, ensuring
-                          reliable CI/CD delivery.
-                        </li>
-                        <li>
-                          Optimized Docker image build processes, reducing image sizes by approximately 60% via
-                          multi-stage builds.
-                        </li>
-                      </ul>
-                    </p>
+                    <ul className="text-on-surface-variant font-body leading-relaxed mb-4 list-disc ml-6">
+                      <li>
+                        Established a structured, feature-based development approach to improve scalability and
+                        maintainability.
+                      </li>
+                      <li>Integrated unit testing at the pipeline level to enhance code quality and reliability.</li>
+                      <li>
+                        Implemented consistent structured logging, improved authentication workflows and centralized
+                        error handling across Backoffice products.
+                      </li>
+                      <li>
+                        Resolved expired OKTA authentication configuration issues restoring and securing DEV
+                        environments.
+                      </li>
+                      <li>
+                        Initiated a long-term transition plan to replace an unscalable and unmaintainable role based
+                        grouping system. (CASL)
+                      </li>
+                      <li>
+                        Facilitated team discussions to encourage and document frontend innovations and best practices.
+                      </li>
+                      <li>
+                        Produced detailed technical documentation and established a standardized onboarding template for
+                        new team members.
+                      </li>
+                      <li>
+                        Refactored key application pages, increasing maintainability and establishing credibility with
+                        business stakeholders.
+                      </li>
+                      <li>
+                        Identified and remediated security vulnerabilities across multiple application layers (React,
+                        Next.js, Node).
+                      </li>
+                      <li>
+                        Launched a dedicated payment ecosystem communication channel to streamline collaboration among
+                        technical leads.
+                      </li>
+                      <li>
+                        Introduced testing branches to efficiently aggregate and validate feature sets, optimizing the
+                        Dev-QA process.
+                      </li>
+                      <li>
+                        Collaborated with QA and DevOps to resolve complex cross-team configuration issues, ensuring
+                        reliable CI/CD delivery.
+                      </li>
+                      <li>
+                        Optimized Docker image build processes, reducing image sizes by approximately 60% via
+                        multi-stage builds.
+                      </li>
+                    </ul>
                     <div className="flex flex-wrap gap-2">
                       {[
                         'Next.JS App Router / Pages Router',
