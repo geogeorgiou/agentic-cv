@@ -54,7 +54,7 @@ function CardHeader({
 }
 
 const cardClass =
-  'glass-card p-6 md:p-10 rounded-2xl group border transition-transform duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] md:hover:scale-[1.02] md:hover:-translate-y-1 cursor-pointer md:cursor-default';
+  'glass-card p-6 md:p-10 rounded-2xl group border transition-transform duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] md:hover:scale-[1.02] md:hover:-translate-y-1 cursor-default w-full text-left bg-transparent';
 
 const contentRevealClass =
   'max-h-0 md:group-hover:max-h-[600px] opacity-0 md:group-hover:opacity-100 overflow-hidden md:group-hover:overflow-y-auto mt-0 md:group-hover:mt-6 pr-3 transition-[max-height,opacity,margin-top] duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]';
@@ -116,7 +116,11 @@ export function Experience() {
         <div className="flex flex-col gap-4 max-w-4xl mx-auto">
           {/* ── AgileActors ── */}
           <div style={slideStyle(visible, CARDS[0].slideDelay)}>
-            <div className={`${cardClass} border-outline-variant/20`} onClick={() => handleCardClick('agile-actors')}>
+            <button
+              type="button"
+              className={`${cardClass} border-outline-variant/20`}
+              onClick={() => handleCardClick('agile-actors')}
+            >
               <div style={contentStyle(visible, CARDS[0].contentDelay)}>
                 <CardHeader
                   href="https://www.agileactors.com/"
@@ -270,12 +274,16 @@ export function Experience() {
                   </div>
                 </div>
               </div>
-            </div>
+            </button>
           </div>
 
           {/* ── Netu ── */}
           <div style={slideStyle(visible, CARDS[1].slideDelay)}>
-            <div className={`${cardClass} border-outline-variant/20`} onClick={() => handleCardClick('netu')}>
+            <button
+              type="button"
+              className={`${cardClass} border-outline-variant/20`}
+              onClick={() => handleCardClick('netu')}
+            >
               <div style={contentStyle(visible, CARDS[1].contentDelay)}>
                 <CardHeader
                   href="https://www.netugroup.com/"
@@ -301,12 +309,16 @@ export function Experience() {
                   ))}
                 </div>
               </div>
-            </div>
+            </button>
           </div>
 
           {/* ── Dataverse ── */}
           <div style={slideStyle(visible, CARDS[2].slideDelay)}>
-            <div className={`${cardClass} border-primary/20`} onClick={() => handleCardClick('dataverse')}>
+            <button
+              type="button"
+              className={`${cardClass} border-primary/20`}
+              onClick={() => handleCardClick('dataverse')}
+            >
               <div style={contentStyle(visible, CARDS[2].contentDelay)}>
                 <CardHeader
                   href="https://www.dataverse.gr/"
@@ -333,7 +345,7 @@ export function Experience() {
                   ))}
                 </div>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>

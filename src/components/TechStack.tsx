@@ -80,7 +80,7 @@ function ElectricBorderLayers({ color }: { color: string }) {
         className="absolute inset-0 rounded-[2rem]"
         style={{
           background: 'linear-gradient(-30deg, white, transparent 30%, transparent 70%, white)',
-          filter: 'blur(16px)',
+          filter: 'blur(10px)',
           transform: 'scale(1.1)',
           mixBlendMode: 'overlay',
           opacity: 0.5,
@@ -91,7 +91,7 @@ function ElectricBorderLayers({ color }: { color: string }) {
         style={{
           inset: '-4px',
           background: `linear-gradient(-30deg, ${color}, transparent, ${color})`,
-          filter: 'blur(28px)',
+          filter: 'blur(10px)',
           transform: 'scale(1.08)',
           opacity: 0.35,
         }}
