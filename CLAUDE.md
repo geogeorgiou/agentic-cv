@@ -9,6 +9,7 @@ npm run dev       # start Vite dev server with HMR
 npm run build     # type-check (tsc -b) then bundle (vite build)
 npm run lint      # ESLint
 npm run preview   # serve the production build locally
+npm run deploy    # deploy the app to Github Pages
 ```
 
 There are no tests configured yet.

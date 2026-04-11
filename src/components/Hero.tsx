@@ -15,7 +15,7 @@ export function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-8 text-center">
         {/* Avatar */}
-        <div className="relative inline-block mb-10">
+        <div className="relative inline-block mb-10" style={{ animation: 'hero-fade-in 600ms ease-out 100ms both' }}>
           <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-110" />
           <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full p-1 bg-gradient-to-tr from-primary/50 to-secondary/50 avatar-glow">
             <img
@@ -26,23 +26,35 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="mx-auto w-fit px-4 py-1.5 mb-6 rounded-full bg-surface-container-highest/50 backdrop-blur-md border border-outline-variant/20 text-secondary text-sm font-medium tracking-wider uppercase text-center">
+        <div
+          className="mx-auto w-fit px-4 py-1.5 mb-6 rounded-full bg-surface-container-highest/50 backdrop-blur-md border border-outline-variant/20 text-secondary text-sm font-medium tracking-wider uppercase text-center"
+          style={{ animation: 'hero-fade-in 600ms ease-out 250ms both' }}
+        >
           Available for Architecture &amp; Consulting
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-8xl font-headline font-bold text-on-surface tracking-tighter mb-6 leading-tight">
+        <h1
+          className="text-5xl sm:text-6xl md:text-8xl font-headline font-bold text-on-surface tracking-tighter mb-6 leading-tight"
+          style={{ animation: 'hero-fade-in 600ms ease-out 400ms both' }}
+        >
           Georgios{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">
             Georgiou
           </span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-on-surface-variant font-body font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p
+          className="text-xl md:text-2xl text-on-surface-variant font-body font-light mb-12 max-w-2xl mx-auto leading-relaxed"
+          style={{ animation: 'hero-fade-in 600ms ease-out 550ms both' }}
+        >
           Software Engineer / Tech Lead specialized in building high-performance User Interfaces minimizing user
           friction with modern technologies of JS ecosystem.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+          style={{ animation: 'hero-fade-in 600ms ease-out 700ms both' }}
+        >
           <a
             href={config.contact.github}
             target="_blank"
