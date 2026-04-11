@@ -37,7 +37,7 @@ function CardHeader({
           <img
             height="20"
             width="20"
-            src={`http://www.google.com/s2/favicons?domain=${href}`}
+            src={`https://www.google.com/s2/favicons?domain=${href}`}
             alt={`${name} favicon`}
           />
         </a>
