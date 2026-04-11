@@ -19,7 +19,7 @@ export function Hero() {
           <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full p-1 bg-gradient-to-tr from-primary/50 to-secondary/50 avatar-glow">
             <img
               alt="Georgios Georgiou"
-              className="w-full h-full rounded-full object-cover object-[center_20%] grayscale hover:grayscale-0 transition-all duration-500 border-4 border-surface"
+              className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500 border-4 border-surface"
               src={AVATAR_URL}
             />
           </div>
