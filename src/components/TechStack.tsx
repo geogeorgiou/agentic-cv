@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useIsDesktop } from '@/hooks/useIsDesktop';
 
 const BACKGROUND_IMG =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuCs0ixmFlmQrCSwoBd__F_t89q-TTt9dISXB5kFcUIwfqZV9gIDKHJ3XgKG5o__rw0ICOAnhMvzFxDzuwaqrc9vr0Tr61p5zAn_dzC3mJ9CmbsMddjzagwaCKtpyEmZc7r29zA6Zxlw8oKAyY6bybwBFLr34mrSLHsAHzORLmihGS67lOcc_Zp-waBgZ3XFK_bA2jgu1leEo5evDbUTdyER_4bMq_SspzXomumg-YTvBloet_zabeeJxkVwjmXzu1okw9WLw6ueljNP';
@@ -122,6 +123,17 @@ function PokerCard({ index, visible, front, badge }: PokerCardProps) {
   const { flipDelay, color, icon, iconColor } = CARD_CONFIG[index];
   const electricDelay = flipDelay + FLIP_DURATION;
   const [hovered, setHovered] = useState(false);
+  const isDesktop = useIsDesktop();
+
+  // On mobile: show front immediately, no flip, no electric effects
+  if (!isDesktop) {
+    return (
+      <div className="relative">
+        {front}
+        {badge}
+      </div>
+    );
+  }
 
   return (
     <div
