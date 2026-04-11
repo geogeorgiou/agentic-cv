@@ -1,7 +1,6 @@
 import { config } from '@/config';
 
-const AVATAR_URL =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAJLzsc1utgxC5ZaGQqQk4aWamnFW8Lr9ZNLtj5m23TNNjSIvbbODVFDF9EUFJY-zYWH4NKr5GYz5WQtkfZaAAhff-SQjfNBowgfjc4raHN1LJAy-xndA3caeLY1Qw-Ew3TTbeAb6f0swO0XqV9ivm1N9kPy5EclYXj7K5NcFhYdkK8GnC7BeS2OBlbt6TVysm3HYyOh6XDbVxbhhDZtx_X9-vnaTK-mqLEQdKVLhlOGCYAzmFognMQ663-uzEXN4mJzxkJ4C8qVrmp';
+const AVATAR_URL = `${import.meta.env.BASE_URL}avatar.webp`;
 
 export function Hero() {
   return (
