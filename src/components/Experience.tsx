@@ -99,9 +99,13 @@ export function Experience() {
   };
 
   return (
-    <section ref={sectionRef} className="py-32 bg-surface-container-low relative" id="experience">
+    <section
+      ref={sectionRef}
+      className="py-16 md:py-32 bg-surface-container-low relative overflow-hidden"
+      id="experience"
+    >
       <div className="max-w-7xl mx-auto px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-24 gap-6">
           <div className="max-w-xl">
             <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface tracking-tight mb-4">
               Professional Journey
