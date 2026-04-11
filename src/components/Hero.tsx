@@ -1,6 +1,7 @@
 import { config } from '@/config';
+import avatarImg from '@/assets/avatar.webp';
 
-const AVATAR_URL = `${import.meta.env.BASE_URL}avatar.webp`;
+const AVATAR_URL = avatarImg;
 
 export function Hero() {
   return (
