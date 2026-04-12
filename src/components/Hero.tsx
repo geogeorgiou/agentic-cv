@@ -30,7 +30,7 @@ export function Hero() {
           className="mx-auto w-fit px-4 py-1.5 mb-6 rounded-full bg-surface-container-highest/50 backdrop-blur-md border border-outline-variant/20 text-secondary text-sm font-medium tracking-wider uppercase text-center"
           style={{ animation: 'hero-fade-in 600ms ease-out 250ms both' }}
         >
-          Available for Architecture &amp; Consulting
+          Available for Engineering &amp; Development Consulting
         </div>
 
         <h1
@@ -47,8 +47,8 @@ export function Hero() {
           className="text-xl md:text-2xl text-on-surface-variant font-body font-light mb-12 max-w-2xl mx-auto leading-relaxed"
           style={{ animation: 'hero-fade-in 600ms ease-out 550ms both' }}
         >
-          Software Engineer / Tech Lead specialized in building high-performance User Interfaces minimizing user
-          friction with modern technologies of JS ecosystem.
+          Software Engineer Tech Lead building seamless, high-performance UIs with the modern JS stack. Catering for Web
+          apps to deliver frictionless, delightful UX.
         </p>
 
         <div

@@ -54,7 +54,7 @@ function CardHeader({
 }
 
 const cardClass =
-  'glass-card p-6 md:p-10 rounded-2xl group border transition-transform duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] md:hover:scale-[1.02] md:hover:-translate-y-1 cursor-default w-full text-left bg-transparent';
+  'glass-card p-6 md:p-10 rounded-2xl group border transition-transform duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] md:hover:scale-[1.02] md:hover:-translate-y-1 cursor-pointer md:cursor-default';
 
 const contentRevealClass =
   'max-h-0 md:group-hover:max-h-[600px] opacity-0 md:group-hover:opacity-100 overflow-hidden md:group-hover:overflow-y-auto mt-0 md:group-hover:mt-6 pr-3 transition-[max-height,opacity,margin-top] duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]';
@@ -99,13 +99,9 @@ export function Experience() {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-16 md:py-32 bg-surface-container-low relative overflow-hidden"
-      id="experience"
-    >
+    <section ref={sectionRef} className="py-32 bg-surface-container-low relative" id="experience">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-24 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-6">
           <div className="max-w-xl">
             <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface tracking-tight mb-4">
               Professional Journey
@@ -120,11 +116,7 @@ export function Experience() {
         <div className="flex flex-col gap-4 max-w-4xl mx-auto">
           {/* ── AgileActors ── */}
           <div style={slideStyle(visible, CARDS[0].slideDelay)}>
-            <button
-              type="button"
-              className={`${cardClass} border-outline-variant/20`}
-              onClick={() => handleCardClick('agile-actors')}
-            >
+            <div className={`${cardClass} border-outline-variant/20`} onClick={() => handleCardClick('agile-actors')}>
               <div style={contentStyle(visible, CARDS[0].contentDelay)}>
                 <CardHeader
                   href="https://www.agileactors.com/"
@@ -146,56 +138,59 @@ export function Experience() {
                 <div className="space-y-8">
                   <div>
                     <p className="text-on-surface font-body font-semibold mb-2">Sportion</p>
-                    <ul className="text-on-surface-variant font-body leading-relaxed mb-4 list-disc ml-6">
-                      <li>
-                        Established a structured, feature-based development approach to improve scalability and
-                        maintainability.
-                      </li>
-                      <li>Integrated unit testing at the pipeline level to enhance code quality and reliability.</li>
-                      <li>
-                        Implemented consistent structured logging, improved authentication workflows and centralized
-                        error handling across Backoffice products.
-                      </li>
-                      <li>
-                        Resolved expired OKTA authentication configuration issues restoring and securing DEV
-                        environments.
-                      </li>
-                      <li>
-                        Initiated a long-term transition plan to replace an unscalable and unmaintainable role based
-                        grouping system. (CASL)
-                      </li>
-                      <li>
-                        Facilitated team discussions to encourage and document frontend innovations and best practices.
-                      </li>
-                      <li>
-                        Produced detailed technical documentation and established a standardized onboarding template for
-                        new team members.
-                      </li>
-                      <li>
-                        Refactored key application pages, increasing maintainability and establishing credibility with
-                        business stakeholders.
-                      </li>
-                      <li>
-                        Identified and remediated security vulnerabilities across multiple application layers (React,
-                        Next.js, Node).
-                      </li>
-                      <li>
-                        Launched a dedicated payment ecosystem communication channel to streamline collaboration among
-                        technical leads.
-                      </li>
-                      <li>
-                        Introduced testing branches to efficiently aggregate and validate feature sets, optimizing the
-                        Dev-QA process.
-                      </li>
-                      <li>
-                        Collaborated with QA and DevOps to resolve complex cross-team configuration issues, ensuring
-                        reliable CI/CD delivery.
-                      </li>
-                      <li>
-                        Optimized Docker image build processes, reducing image sizes by approximately 60% via
-                        multi-stage builds.
-                      </li>
-                    </ul>
+                    <p className="text-on-surface-variant font-body leading-relaxed mb-4">
+                      <ul className="list-disc ml-6">
+                        <li>
+                          Established a structured, feature-based development approach to improve scalability and
+                          maintainability.
+                        </li>
+                        <li>Integrated unit testing at the pipeline level to enhance code quality and reliability.</li>
+                        <li>
+                          Implemented consistent structured logging, improved authentication workflows and centralized
+                          error handling across Backoffice products.
+                        </li>
+                        <li>
+                          Resolved expired OKTA authentication configuration issues restoring and securing DEV
+                          environments.
+                        </li>
+                        <li>
+                          Initiated a long-term transition plan to replace an unscalable and unmaintainable role based
+                          grouping system. (CASL)
+                        </li>
+                        <li>
+                          Facilitated team discussions to encourage and document frontend innovations and best
+                          practices.
+                        </li>
+                        <li>
+                          Produced detailed technical documentation and established a standardized onboarding template
+                          for new team members.
+                        </li>
+                        <li>
+                          Refactored key application pages, increasing maintainability and establishing credibility with
+                          business stakeholders.
+                        </li>
+                        <li>
+                          Identified and remediated security vulnerabilities across multiple application layers (React,
+                          Next.js, Node).
+                        </li>
+                        <li>
+                          Launched a dedicated payment ecosystem communication channel to streamline collaboration among
+                          technical leads.
+                        </li>
+                        <li>
+                          Introduced testing branches to efficiently aggregate and validate feature sets, optimizing the
+                          Dev-QA process.
+                        </li>
+                        <li>
+                          Collaborated with QA and DevOps to resolve complex cross-team configuration issues, ensuring
+                          reliable CI/CD delivery.
+                        </li>
+                        <li>
+                          Optimized Docker image build processes, reducing image sizes by approximately 60% via
+                          multi-stage builds.
+                        </li>
+                      </ul>
+                    </p>
                     <div className="flex flex-wrap gap-2">
                       {[
                         'Next.JS App Router / Pages Router',
@@ -275,16 +270,12 @@ export function Experience() {
                   </div>
                 </div>
               </div>
-            </button>
+            </div>
           </div>
 
           {/* ── Netu ── */}
           <div style={slideStyle(visible, CARDS[1].slideDelay)}>
-            <button
-              type="button"
-              className={`${cardClass} border-outline-variant/20`}
-              onClick={() => handleCardClick('netu')}
-            >
+            <div className={`${cardClass} border-outline-variant/20`} onClick={() => handleCardClick('netu')}>
               <div style={contentStyle(visible, CARDS[1].contentDelay)}>
                 <CardHeader
                   href="https://www.netugroup.com/"
@@ -310,16 +301,12 @@ export function Experience() {
                   ))}
                 </div>
               </div>
-            </button>
+            </div>
           </div>
 
           {/* ── Dataverse ── */}
           <div style={slideStyle(visible, CARDS[2].slideDelay)}>
-            <button
-              type="button"
-              className={`${cardClass} border-primary/20`}
-              onClick={() => handleCardClick('dataverse')}
-            >
+            <div className={`${cardClass} border-primary/20`} onClick={() => handleCardClick('dataverse')}>
               <div style={contentStyle(visible, CARDS[2].contentDelay)}>
                 <CardHeader
                   href="https://www.dataverse.gr/"
@@ -346,7 +333,7 @@ export function Experience() {
                   ))}
                 </div>
               </div>
-            </button>
+            </div>
           </div>
         </div>
       </div>

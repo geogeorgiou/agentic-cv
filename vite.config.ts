@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 export default defineConfig({
   base: '/agentic-cv/',
-  plugins: [tailwindcss(), react()],
   resolve: {
     tsconfigPaths: true,
   },
+  plugins: [tailwindcss(), react()],
 });
