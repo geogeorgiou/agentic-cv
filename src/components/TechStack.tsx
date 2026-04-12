@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
+import techStackBg from '@/assets/techstack-bg.webp';
 
-const BACKGROUND_IMG =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCs0ixmFlmQrCSwoBd__F_t89q-TTt9dISXB5kFcUIwfqZV9gIDKHJ3XgKG5o__rw0ICOAnhMvzFxDzuwaqrc9vr0Tr61p5zAn_dzC3mJ9CmbsMddjzagwaCKtpyEmZc7r29zA6Zxlw8oKAyY6bybwBFLr34mrSLHsAHzORLmihGS67lOcc_Zp-waBgZ3XFK_bA2jgu1leEo5evDbUTdyER_4bMq_SspzXomumg-YTvBloet_zabeeJxkVwjmXzu1okw9WLw6ueljNP';
+const BACKGROUND_IMG = techStackBg;
 
 const BACKEND_SKILLS = ['Node.js / NestJS', 'Java / Spring Boot', 'SQL', 'Hibernate'];
 const FRONTEND_SKILLS = [
@@ -80,7 +80,7 @@ function ElectricBorderLayers({ color }: { color: string }) {
         className="absolute inset-0 rounded-[2rem]"
         style={{
           background: 'linear-gradient(-30deg, white, transparent 30%, transparent 70%, white)',
-          filter: 'blur(16px)',
+          filter: 'blur(10px)',
           transform: 'scale(1.1)',
           mixBlendMode: 'overlay',
           opacity: 0.5,
@@ -91,7 +91,7 @@ function ElectricBorderLayers({ color }: { color: string }) {
         style={{
           inset: '-4px',
           background: `linear-gradient(-30deg, ${color}, transparent, ${color})`,
-          filter: 'blur(28px)',
+          filter: 'blur(10px)',
           transform: 'scale(1.08)',
           opacity: 0.35,
         }}
@@ -228,7 +228,7 @@ export function TechStack() {
     <section ref={sectionRef} className="py-32 relative overflow-x-hidden" id="tech-stack">
       <TurbulenceFilter />
 
-      <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+      <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
         <img className="w-full h-full object-cover" src={BACKGROUND_IMG} alt="" />
       </div>
 
